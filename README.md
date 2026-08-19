@@ -60,7 +60,7 @@ Dành cho những bạn thích code offline, quản lý file trực tiếp trên
    * File PDF sẽ xuất hiện dưới dạng chia đôi màn hình (Split View). Từ bây giờ, mỗi khi bạn gõ text và lưu lại (`Ctrl + S`), file PDF bên cạnh sẽ tự động cập nhật ngay lập tức.
 
 📺 **Tham khảo Video hướng dẫn chi tiết từng bước tại đây:** 
-[Install LaTeX Workshop and compile PDF in VSCode LaTeX (Windows)](<ĐIỀN_LINK_YOUTUBE_CỦA_BẠN_VÀO_ĐÂY>)
+[Install LaTeX Workshop and compile PDF in VSCode LaTeX (Windows)](https://www.youtube.com/watch?v=4lyHIQl4VM8)
 
 ---
 
