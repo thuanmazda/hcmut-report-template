@@ -40,7 +40,7 @@ Prism là không gian soạn thảo tích hợp AI, hỗ trợ đắc lực tron
 4. Bấm nút **Compile** trên giao diện để kết xuất ra PDF. Nếu trình biên dịch báo lỗi thiếu package, bạn có thể chat trực tiếp với AI để nhờ fix ngay tại chỗ.
 
 ### Cách 3: Biên dịch Local trên máy tính (VSCode + MiKTeX trên Windows)
-Dành cho những bạn thích code offline, quản lý file trực tiếp trên máy cá nhân và tận dụng tốc độ của máy tính. Các bước thiết lập dưới đây được tóm tắt bám sát theo video hướng dẫn chi tiết:
+Dành cho những bạn thích code offline, quản lý file trực tiếp trên máy cá nhân và tận dụng tốc độ của máy tính.
 
 1. **Cài đặt trình biên dịch MiKTeX:**
    * Truy cập trang chủ [MiKTeX](https://miktex.org/download) và tải file cài đặt (Installer) dành cho Windows.
