@@ -1,3 +1,5 @@
+% !TeX program = pdflatex
+% !TeX root = main.tex
 \documentclass[12pt, a4paper, oneside]{article}
 \usepackage[utf8]{vietnam}
 \usepackage[utf8]{inputenc}
@@ -193,7 +195,58 @@
 \vspace{1cm}
 \end{titlepage}
 
+%Bảng phân công nhiệm vụ của thành viên (Dùng cho nhóm sinh viên), nếu có form riêng của giảng viên thì xuất pdf sau đó chèn trang mẫu của giảng viên vào
 \newpage
+\section*{BẢNG PHÂN CÔNG NHIỆM VỤ VÀ ĐÁNH GIÁ THÀNH VIÊN}
+\addcontentsline{toc}{section}{BẢNG PHÂN CÔNG NHIỆM VỤ VÀ ĐÁNH GIÁ THÀNH VIÊN}
+
+Dưới đây là bảng chi tiết phân công công việc và đánh giá mức độ hoàn thành của các thành viên trong Nhóm xx.
+
+\vspace{0.5cm}
+
+\begin{table}[H] % Chữ H viết hoa để ép bảng đứng im tại đây
+    \centering
+    \renewcommand{\arraystretch}{1.8}
+    \renewcommand{\tabularxcolumn}[1]{m{#1}} % Ép cột X tự động căn giữa chiều dọc
+    \begin{tabularx}{\textwidth}{|c|l|X|c|>{\centering\arraybackslash}m{2.5cm}|}
+        \hline
+        \textbf{MSSV} & \textbf{Họ và tên} & \multicolumn{1}{c|}{\textbf{Phân công công việc}} & \textbf{Tỉ lệ} & \textbf{Chữ ký} \\
+        \hline
+        % --- Thành viên 1 ---
+        23xxxxx & Nguyễn Văn A & 
+        - Phân tích lý thuyết \newline
+        - Thực hiện mô phỏng. \newline
+        - Tổng hợp nội dung. & 
+        100\% & 
+         \\
+        \hline
+        % --- Thành viên 2 ---
+        23xxxxx & Trần Văn B & 
+        - Phân tích. \newline
+        - Thiết kế và mô phỏng. \newline
+        - Xác định. & 
+        100\% & 
+         \\
+        \hline
+        % --- Thành viên 3 ---
+        23xxxxx & Phạm Thị C & 
+        - Thiết kế \newline
+        - Tối ưu hoá. \newline
+        - Bố trí. & 
+        100\% & 
+         \\
+        \hline
+    \end{tabularx}
+\end{table}
+
+\vspace{1cm}
+\begin{flushright}
+    \textit{Thành phố Hồ Chí Minh, ngày .. tháng .. năm ....}
+\end{flushright}
+
+
+
+
 
 \newpage
 \thispagestyle{empty}
