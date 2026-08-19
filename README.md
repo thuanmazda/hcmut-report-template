@@ -67,8 +67,8 @@ Dành cho những bạn thích code offline, quản lý file trực tiếp trên
 ## 💡 Mẹo nhỏ khi viết báo cáo
 
 *   **Chèn code:** Để chèn code, hãy dùng lệnh `\begin{lstlisting}[style=tên_style, caption={Tên đoạn code}]`. Các style hiện có hỗ trợ: `prettyc`, `prettypython`, `prettymatlab`, `prettyverilog`.
-*   **Trích dẫn:** Chỉ cần thả link/thông tin sách vào file `references.bib`. Ở file `main.tex`, lệnh `\nocite{*}` sẽ tự động kéo tất cả ra trang Tài liệu tham khảo theo format IEEE cực chuẩn.
-*   **Thêm ảnh:** Hãy thả tất cả ảnh vào thư mục `figures/`. Trong code, chỉ cần gọi tên file ảnh (VD: `HCMUT.png`) mà không cần gõ cả đường dẫn dài.
+*   **Trích dẫn:** Chỉ cần thả link/thông tin sách vào file `references.bib`. Ở file `main.tex`, lệnh `\nocite{*}` sẽ tự động kéo tất cả ra trang Tài liệu tham khảo theo format IEEE.
+*   **Thêm ảnh:** Hãy thả tất cả ảnh vào thư mục `figures/`. Trong code, chỉ cần gọi tên file ảnh (VD: `HCMUT.png`).
 
 ---
 
