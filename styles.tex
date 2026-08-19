@@ -1,0 +1,227 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C/C++ Code Style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ccommentcolor}{RGB}{34,139,34}    % Xanh lá
+\definecolor{ckeywordcolor}{RGB}{0,0,255}      % Xanh dương
+\definecolor{cnumbercolor}{RGB}{9,134,88}      % Xanh ngọc
+\definecolor{cstringcolor}{RGB}{163,21,21}     % Đỏ gạch
+\definecolor{coperatorcolor}{RGB}{0,0,0}       % Đen
+
+\lstdefinestyle{prettyc}{
+   language           = C++,
+   commentstyle       = \color{ccommentcolor}\itshape,
+   alsoletter         = 0123456789,
+   literate           = *{+}{{\cColorOperator{+}}}{1}%
+                         {-}{{\cColorOperator{-}}}{1}%
+                         {=}{{\cColorOperator{=}}}{1}%
+                         {<}{{\cColorOperator{<}}}{1}%
+                         {>}{{\cColorOperator{>}}}{1}%
+                         {!}{{\cColorOperator{!}}}{1}%
+                         {^}{{\cColorOperator{$\land$}}}{1}%
+                         {|}{{\cColorOperator{|}}}{1}%
+                         {\&}{{\cColorOperator{\&}}}{1}%
+                         {~}{{\cColorOperator{$\sim$}}}{1},
+   morestring         = [b]",
+   morestring         = [b]',
+   identifierstyle    = \color{black},
+   cconstantstyle     = \color{cnumbercolor},
+   basicstyle         = \scriptsize\fontencoding{T1}\ttfamily,
+   keywordstyle       = \bfseries\color{ckeywordcolor},
+   numbers            = left,
+   numbersep          = 10pt,
+   tabsize            = 4,
+   escapeinside       = {/*!}{!*/},
+   upquote            = true,
+   sensitive          = true,
+   showstringspaces   = false,
+   frame              = single
+}
+
+\makeatletter
+\newcommand\language@c{C++}
+\expandafter\lst@NormedDef\expandafter\languageNormedDefd@c\expandafter{\language@c}
+\newcommand\getfirstchar@c{}
+\newcommand\getfirstchar@@c{}
+\newcommand\firstchar@c{}
+\def\getfirstchar@c#1{\getfirstchar@@c#1\relax}
+\def\getfirstchar@@c#1#2\relax{\def\firstchar@c{#1}}
+\newcommand\addedToOutput@c{}
+\lst@AddToHook{Output}{\addedToOutput@c}
+\newcommand\constantstyle@c{}
+\lst@Key{cconstantstyle}\relax{\def\constantstyle@c{#1}}
+\newcount\currentchar@c
+\newcommand\@ddedToOutput@c
+{%
+   \ifnum\lst@mode=\lst@Pmode%
+      \expandafter\getfirstchar@c\expandafter{\the\lst@token}%
+      \currentchar@c=48
+      \loop
+         \expandafter\ifnum%
+         \expandafter`\firstchar@c=\currentchar@c%
+            \let\lst@thestyle\constantstyle@c%
+            \let\iterate\relax%
+         \fi
+         \advance\currentchar@c by \@ne%
+         \unless\ifnum\currentchar@c>57%
+      \repeat%
+   \fi
+}
+\lst@AddToHook{PreInit}{%
+  \ifx\lst@language\languageNormedDefd@c%
+    \let\addedToOutput@c\@ddedToOutput@c%
+  \fi
+}
+\newcommand{\cColorOperator}[1]{\ifnum\lst@mode=\lst@Pmode\relax{\bfseries\textcolor{coperatorcolor}{#1}}\else#1\fi}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Python Code Style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{pythoncommentcolor}{RGB}{34,139,34}  % Xanh lá
+\definecolor{pythonkeywordcolor}{RGB}{0,0,255}    % Xanh dương
+\definecolor{pythonnumbercolor}{RGB}{9,134,88}    % Xanh ngọc
+\definecolor{pythonstringcolor}{RGB}{163,21,21}   % Đỏ gạch
+\definecolor{pythonoperatorcolor}{RGB}{0,0,0}     % Đen
+
+\lstdefinestyle{prettypython}{
+   language           = Python,
+   commentstyle       = \color{pythoncommentcolor}\itshape,
+   alsoletter         = 0123456789,
+   literate           = *{+}{{\pythonColorOperator{+}}}{1}%
+                         {-}{{\pythonColorOperator{-}}}{1}%
+                         {=}{{\pythonColorOperator{=}}}{1}%
+                         {<}{{\pythonColorOperator{<}}}{1}%
+                         {>}{{\pythonColorOperator{>}}}{1}%
+                         {!}{{\pythonColorOperator{!}}}{1}%
+                         {^}{{\pythonColorOperator{$\land$}}}{1}%
+                         {|}{{\pythonColorOperator{|}}}{1}%
+                         {\&}{{\pythonColorOperator{\&}}}{1}%
+                         {~}{{\pythonColorOperator{$\sim$}}}{1},
+   morestring         = [b]",
+   morestring         = [b]',
+   identifierstyle    = \color{black},
+   pythonconstantstyle = \color{pythonnumbercolor},
+   basicstyle         = \scriptsize\fontencoding{T1}\ttfamily,
+   keywordstyle       = \bfseries\color{pythonkeywordcolor},
+   numbers            = left,
+   numbersep          = 10pt,
+   tabsize            = 4,
+   escapeinside       = {/*!}{!*/},
+   upquote            = true,
+   sensitive          = true,
+   showstringspaces   = false,
+   frame              = single
+}
+
+\makeatletter
+\newcommand\language@python{Python}
+\expandafter\lst@NormedDef\expandafter\languageNormedDefd@python\expandafter{\language@python}
+\newcommand\getfirstchar@python{}
+\newcommand\getfirstchar@@python{}
+\newcommand\firstchar@python{}
+\def\getfirstchar@python#1{\getfirstchar@@python#1\relax}
+\def\getfirstchar@@python#1#2\relax{\def\firstchar@python{#1}}
+\newcommand\addedToOutput@python{}
+\lst@AddToHook{Output}{\addedToOutput@python}
+\newcommand\constantstyle@python{}
+\lst@Key{pythonconstantstyle}\relax{\def\constantstyle@python{#1}}
+\newcount\currentchar@python
+\newcommand\@ddedToOutput@python
+{%
+   \ifnum\lst@mode=\lst@Pmode%
+      \expandafter\getfirstchar@python\expandafter{\the\lst@token}%
+      \currentchar@python=48
+      \loop
+         \expandafter\ifnum%
+         \expandafter`\firstchar@python=\currentchar@python%
+            \let\lst@thestyle\constantstyle@python%
+            \let\iterate\relax%
+         \fi
+         \advance\currentchar@python by \@ne%
+         \unless\ifnum\currentchar@python>57%
+      \repeat%
+   \fi
+}
+\lst@AddToHook{PreInit}{%
+  \ifx\lst@language\languageNormedDefd@python%
+    \let\addedToOutput@python\@ddedToOutput@python%
+  \fi
+}
+\newcommand{\pythonColorOperator}[1]{\ifnum\lst@mode=\lst@Pmode\relax{\bfseries\textcolor{pythonoperatorcolor}{#1}}\else#1\fi}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Matlab Code Style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{matlabcommentcolor}{RGB}{34,139,34}   % Xanh lá đậm chuẩn MATLAB
+\definecolor{matlabkeywordcolor}{RGB}{0,0,255}     % Xanh dương chuẩn
+\definecolor{matlabstringcolor}{RGB}{160,32,240}   % Tím đặc trưng cho chuỗi
+\definecolor{matlabnumbercolor}{RGB}{0,0,0}        % Đen cho số
+\definecolor{matlaboperatorcolor}{RGB}{0,0,0}      % Đen cho toán tử
+
+\lstdefinestyle{prettymatlab}{
+   language           = Matlab,
+   commentstyle       = \color{matlabcommentcolor}\itshape,
+   alsoletter         = 0123456789,
+   literate           = *{+}{{\matlabColorOperator{+}}}{1}%
+                         {-}{{\matlabColorOperator{-}}}{1}%
+                         {=}{{\matlabColorOperator{=}}}{1}%
+                         {<}{{\matlabColorOperator{<}}}{1}%
+                         {>}{{\matlabColorOperator{>}}}{1}%
+                         {!}{{\matlabColorOperator{!}}}{1}%
+                         {^}{{\matlabColorOperator{$\land$}}}{1}%
+                         {|}{{\matlabColorOperator{|}}}{1}%
+                         {\&}{{\matlabColorOperator{\&}}}{1}%
+                         {~}{{\matlabColorOperator{$\sim$}}}{1},
+   morestring         = [b]', % MATLAB chỉ dùng nháy đơn cho chuỗi (char array)
+   morestring         = [b]", % Hỗ trợ nháy kép cho String (bản MATLAB mới)
+   identifierstyle    = \color{black},
+   matlabconstantstyle = \color{matlabnumbercolor},
+   basicstyle         = \scriptsize\fontencoding{T1}\ttfamily,
+   keywordstyle       = \color{matlabkeywordcolor}, 
+   numbers            = left,
+   numbersep          = 10pt,
+   tabsize            = 4,
+   escapeinside       = {/*!}{!*/},
+   upquote            = true,
+   sensitive          = true,
+   showstringspaces   = false,
+   frame              = single
+}
+
+\makeatletter
+\newcommand\language@matlab{Matlab}
+\expandafter\lst@NormedDef\expandafter\languageNormedDefd@matlab\expandafter{\language@matlab}
+\newcommand\getfirstchar@matlab{}
+\newcommand\getfirstchar@@matlab{}
+\newcommand\firstchar@matlab{}
+\def\getfirstchar@matlab#1{\getfirstchar@@matlab#1\relax}
+\def\getfirstchar@@matlab#1#2\relax{\def\firstchar@matlab{#1}}
+\newcommand\addedToOutput@matlab{}
+\lst@AddToHook{Output}{\addedToOutput@matlab}
+\newcommand\constantstyle@matlab{}
+\lst@Key{matlabconstantstyle}\relax{\def\constantstyle@matlab{#1}}
+\newcount\currentchar@matlab
+\newcommand\@ddedToOutput@matlab
+{%
+   \ifnum\lst@mode=\lst@Pmode%
+      \expandafter\getfirstchar@matlab\expandafter{\the\lst@token}%
+      \currentchar@matlab=48
+      \loop
+         \expandafter\ifnum%
+         \expandafter`\firstchar@matlab=\currentchar@matlab%
+            \let\lst@thestyle\constantstyle@matlab%
+            \let\iterate\relax%
+         \fi
+         \advance\currentchar@matlab by \@ne%
+         \unless\ifnum\currentchar@matlab>57%
+      \repeat%
+   \fi
+}
+\lst@AddToHook{PreInit}{%
+  \ifx\lst@language\languageNormedDefd@matlab%
+    \let\addedToOutput@matlab\@ddedToOutput@matlab%
+  \fi
+}
+\newcommand{\matlabColorOperator}[1]{\ifnum\lst@mode=\lst@Pmode\relax{\textcolor{matlaboperatorcolor}{#1}}\else#1\fi}
+\makeatother
