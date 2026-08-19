@@ -22,7 +22,7 @@ Template LaTeX chuẩn dành cho viết báo cáo Bài tập lớn, Đồ án m�
 
 ## 🚀 Hướng dẫn sử dụng
 
-Bạn có thể compile template này bằng 3 cách:
+Tại giao diện GitHub, bấm *Code > Download ZIP* để tải toàn bộ source code về máy. Bạn có thể compile template này bằng 3 cách:
 
 ### Cách 1: Sử dụng Overleaf (Khuyên dùng cho làm việc nhóm)
 Overleaf là trình soạn thảo LaTeX trực tuyến tiện lợi nhất, không cần cài đặt phần mềm nặng máy.
